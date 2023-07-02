@@ -13,8 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-Route::get('/',         [App\Http\Controllers\PaymentController::class, 'index']);
+Route::get('/', function () {
+    return view('welcome');
+});
+// Route::get('/',         [App\Http\Controllers\PaymentController::class, 'index']);
 Route::get('/redirect', [App\Http\Controllers\PaymentController::class, 'redirect']);
