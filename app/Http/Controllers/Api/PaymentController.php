@@ -25,19 +25,18 @@ class PaymentController extends Controller
             'currency' => 'usd',
             'customer' => $customer->id,
             'automatic_payment_methods' => [
-                'enabled' => true,
+            'enabled' => true,
             ],
 
         ]);
-        $paymentIntent = json_encode(
+        $paymentIntent = 
             [
               'paymentIntent' => $intent->client_secret,
               'ephemeralKey' => $ephemeralKey->secret,
               'customer' => $customer->id,
               'intent' => $intent,
               'publishableKey' => 'pk_test_51JvIZ1Ey3DjpASZjPAzcOwqhblOq2hbchp6i56BsjapvhWcooQXqh33XwCrKiULfAe7NKFwKUhn2nqURE7VZcXXf00wMDzp4YN'
-            ]
-          );
+            ];
           return Api::setResponse('intent',$paymentIntent);
     }
 }
