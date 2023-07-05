@@ -18,7 +18,9 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
-Route::group(['namespace' => 'App\Http\Controllers\Api'], function () {
+// Route::group(['namespace' => 'App\Http\Controllers\Api'], function () {
 
-    Route::any('createpaymentIntent', [PaymentController::class, 'createPaymentIntent']);
-});
+//     Route::any('createpaymentIntent', [PaymentController::class, 'createPaymentIntent']);
+// });
+
+Route::any('create/payment', [App\Http\Controllers\Api\PaymentController::class, 'createPaymentIntent']);

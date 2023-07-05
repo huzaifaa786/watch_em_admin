@@ -7,10 +7,11 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Stripe\StripeClient;
 
-class PaymentControlller extends Controller
+class PaymentController extends Controller
 {
     public function createPaymentIntent(Request $request){
-        $stripe = new StripeClient('pk_test_51JvIZ1Ey3DjpASZjPAzcOwqhblOq2hbchp6i56BsjapvhWcooQXqh33XwCrKiULfAe7NKFwKUhn2nqURE7VZcXXf00wMDzp4YN');
+        // dd('asasajsasjaisaisjaisjaisjaisaj');
+        $stripe = new StripeClient('sk_test_51JvIZ1Ey3DjpASZjmQpp61o9MDwfEnXHyZIbVE08CiJf3XxMKN93bOlu5MSxiw07yPJwX9kvDezuEugwSNZNkddy00ZCa33RpG');
 
         // Use an existing Customer ID if this is a returning customer.
         $customer = $stripe->customers->create();
