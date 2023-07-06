@@ -10,7 +10,6 @@ use Stripe\StripeClient;
 class PaymentController extends Controller
 {
     public function createPaymentIntent(Request $request){
-        // dd('asasajsasjaisaisjaisjaisjaisaj');
         $stripe = new StripeClient('sk_test_51JvIZ1Ey3DjpASZjmQpp61o9MDwfEnXHyZIbVE08CiJf3XxMKN93bOlu5MSxiw07yPJwX9kvDezuEugwSNZNkddy00ZCa33RpG');
 
         // Use an existing Customer ID if this is a returning customer.
@@ -18,11 +17,11 @@ class PaymentController extends Controller
         $ephemeralKey = $stripe->ephemeralKeys->create([
             'customer' => $customer->id,
         ], [
-            'stripe_version' => '2022-08-01',
+            'stripe_version' => '2023-08-01',
         ]);
         $intent = $stripe->paymentIntents->create([
             'amount' => $request->price * 100,
-            'currency' => 'usd',
+            'currency' => 'GBP',
             'customer' => $customer->id,
             'automatic_payment_methods' => [
             'enabled' => true,
